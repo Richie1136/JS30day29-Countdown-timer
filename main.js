@@ -3,7 +3,6 @@ let countdown;
 const timerDisplay = document.querySelector('.display-time-left')
 const endTime = document.querySelector('.display-end-time')
 const buttons = document.querySelectorAll('[data-time]')
-const custom = document.querySelector('#custom')
 
 
 const displayTimeLeft = (seconds) => {
@@ -19,8 +18,6 @@ const displayEndTime = (timestamp) => {
   const hour = end.getHours()
   const minutes = end.getMinutes()
   endTime.textContent = `Be Back at ${hour > 12 ? hour - 12 : ''}:${minutes < 10 ? '0' : ''}${minutes}`
-  console.log(end)
-  console.log(hour)
 }
 const timer = (seconds) => {
   clearInterval(countdown)
@@ -46,8 +43,6 @@ timer(1000)
 
 function startTimer() {
   const seconds = parseInt(this.dataset.time)
-  console.log(seconds)
-  console.log(this.dataset.time)
   timer(seconds)
 
 }
@@ -60,5 +55,4 @@ custom.addEventListener('submit', function (e) {
   e.preventDefault()
   const mins = this.minutes.value
   timer(mins * 60)
-  console.log(mins)
 })
