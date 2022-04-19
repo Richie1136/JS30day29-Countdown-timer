@@ -3,6 +3,7 @@ let countdown;
 const timerDisplay = document.querySelector('.display-time-left')
 const endTime = document.querySelector('.display-end-time')
 const buttons = document.querySelectorAll('[data-time]')
+const custom = document.querySelector('#custom')
 
 
 const displayTimeLeft = (seconds) => {
@@ -53,4 +54,11 @@ function startTimer() {
 
 buttons.forEach((button) => {
   button.addEventListener('click', startTimer)
+})
+
+custom.addEventListener('submit', function (e) {
+  e.preventDefault()
+  const mins = this.minutes.value
+  timer(mins * 60)
+  console.log(mins)
 })
