@@ -40,8 +40,12 @@ const timer = (seconds) => {
 
 timer(1000)
 
-const startTimer = () => {
-  console.log(this)
+
+
+function startTimer() {
+  const seconds = parseInt(this.dataset.time)
+  console.log(this.dataset.time)
+
 }
 
 buttons.forEach((button) => {
