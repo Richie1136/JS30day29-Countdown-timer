@@ -22,6 +22,7 @@ const displayEndTime = (timestamp) => {
   console.log(hour)
 }
 const timer = (seconds) => {
+  clearInterval(countdown)
   const now = Date.now()
   const then = now + seconds * 1000
   displayTimeLeft(seconds)
@@ -44,7 +45,9 @@ timer(1000)
 
 function startTimer() {
   const seconds = parseInt(this.dataset.time)
+  console.log(seconds)
   console.log(this.dataset.time)
+  timer(seconds)
 
 }
 
