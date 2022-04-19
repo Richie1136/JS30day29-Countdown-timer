@@ -1,14 +1,23 @@
+let countdown;
+
+const displayTimeLeft = (seconds) => {
+  console.log(seconds)
+}
 const timer = (seconds) => {
   const now = Date.now()
-  console.log(now)
   const then = now + seconds * 1000
-  console.log(then)
+  displayTimeLeft(seconds)
 
-  setInterval(() => {
-    const secondsLeft = then - Date.now() / 1000
-    console.log(secondsLeft)
+  countdown = setInterval(() => {
+    const secondsLeft = Math.round((then - Date.now()) / 1000)
+    if (secondsLeft < 0) {
+      clearInterval(countdown)
+      return;
+    }
+    displayTimeLeft(secondsLeft)
   }, 1000);
 
 }
 
-timer(10)
+timer(3)
+
