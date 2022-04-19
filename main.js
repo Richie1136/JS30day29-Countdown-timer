@@ -1,7 +1,10 @@
 let countdown;
 
 const displayTimeLeft = (seconds) => {
+  let minutes = Math.floor(seconds / 60)
+  let hours = Math.floor(seconds / 3600)
   console.log(seconds)
+  console.log(minutes)
 }
 const timer = (seconds) => {
   const now = Date.now()
